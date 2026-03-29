@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YukiMind Studio — Cyber-Pastel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cp: {
+                bg: "#FCFAF2",
+                footer: "#E2DBD0",
+                ink: "#1A1A1A",
+                muted: "#4A4A4A",
+                sakura: "#FFC0CB",
+                lavender: "#E6E6FA",
+              },
+            },
+            fontFamily: {
+              sans: [
+                "Inter",
+                "PingFang SC",
+                "Lantinghei SC",
+                "Microsoft YaHei",
+                "system-ui",
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: Inter, "PingFang SC", "Lantinghei SC", "Microsoft YaHei",
+          system-ui, sans-serif;
+      }
+      .hero-texture {
+        background-color: #fcfaf2;
+        background-image: linear-gradient(
+            rgba(255, 192, 203, 0.14) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            90deg,
+            rgba(230, 230, 250, 0.18) 1px,
+            transparent 1px
+          ),
+          radial-gradient(
+            ellipse 80% 50% at 50% -20%,
+            rgba(255, 192, 203, 0.2),
+            transparent
+          );
+        background-size: 48px 48px, 48px 48px, 100% 100%;
+      }
+      .code-rain {
+        background-image: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(26, 26, 26, 0.025) 2px,
+          rgba(26, 26, 26, 0.025) 4px
+        );
+      }
+      .y-glow {
+        text-shadow: 0 0 18px rgba(255, 192, 203, 0.55),
+          0 0 36px rgba(230, 230, 250, 0.45),
+          0 0 56px rgba(230, 230, 250, 0.28),
+          0 0 80px rgba(255, 192, 203, 0.18);
+        filter: drop-shadow(0 0 22px rgba(255, 192, 203, 0.4));
+      }
+      .y-ring {
+        box-shadow: 0 0 0 1px rgba(255, 192, 203, 0.35),
+          0 0 50px rgba(230, 230, 250, 0.35),
+          0 0 100px rgba(255, 192, 203, 0.12),
+          inset 0 0 50px rgba(230, 230, 250, 0.12);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.42);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        box-shadow: 0 4px 32px rgba(26, 26, 26, 0.04),
+          inset 0 1px 0 rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+      .museum-frame {
+        background: linear-gradient(
+          145deg,
+          #faf8f4 0%,
+          #f3efe8 45%,
+          #faf7f2 100%
+        );
+        border-radius: 0.375rem;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset,
+          0 0 0 1px rgba(26, 26, 26, 0.06),
+          0 2px 8px rgba(26, 26, 26, 0.04);
+        padding: 0.65rem;
+      }
+      .museum-frame-inner {
+        border-radius: 0.125rem;
+        box-shadow: inset 0 0 0 1px rgba(26, 26, 26, 0.05);
+        background: #fdfcfa;
+      }
+      .gallery-piece {
+        box-shadow: 0 8px 28px rgba(26, 26, 26, 0.06),
+          0 2px 8px rgba(26, 26, 26, 0.03);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+      }
+      .gallery-piece:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 48px rgba(26, 26, 26, 0.1),
+          0 8px 20px rgba(255, 192, 203, 0.12);
+      }
+      .footer-legal-line {
+        line-height: 1.65;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-cp-bg font-sans text-cp-ink antialiased"
+  >
+    <!-- Hero -->
+    <header
+      class="relative flex min-h-screen flex-col overflow-hidden hero-texture code-rain"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 opacity-[0.4]"
+        aria-hidden="true"
+        style="
+          background: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 1px,
+            rgba(26, 26, 26, 0.04) 1px,
+            rgba(26, 26, 26, 0.04) 2px
+          );
+        "
+      ></div>
+
+      <nav
+        class="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center gap-5 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"
+      >
+        <a
+          href="#"
+          class="text-lg font-semibold tracking-tight text-cp-ink transition hover:text-cp-sakura"
+          ><span translate="no" class="notranslate">YukiMind</span></a
+        >
+        <ul
+          class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-cp-muted sm:gap-8"
+        >
+          <li>
+            <a
+              href="#products"
+              class="transition hover:text-cp-lavender focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cp-sakura"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              href="#philosophy"
+              class="transition hover:text-cp-lavender focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cp-sakura"
+              >Philosophy</a
+            >
+          </li>
+          <li>
+            <a
+              href="#yuki-gallery"
+              class="transition hover:text-cp-lavender focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cp-sakura"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="transition hover:text-cp-lavender focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cp-sakura"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div
+        class="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col items-center gap-12 px-5 pb-20 pt-8 sm:px-6 lg:flex-row lg:items-center lg:gap-16 lg:px-8 lg:pb-24 lg:pt-4"
+      >
+        <div class="w-full max-w-xl text-center lg:max-w-none lg:flex-1 lg:text-left">
+          <h1
+            class="text-4xl font-extrabold leading-[1.1] tracking-tight text-cp-ink sm:text-5xl lg:text-6xl xl:text-[3.5rem]"
+          >
+            Privacy-First Apps, Local-First Architecture.
+          </h1>
+          <p
+            class="mt-6 text-lg font-normal leading-relaxed text-cp-ink/50 sm:text-xl sm:leading-relaxed lg:mt-7 lg:text-[1.35rem] lg:leading-[1.65]"
+          >
+            <span translate="no" class="notranslate">YukiMind Studio</span>
+            creates secure, offline-first mobile tools that put your data back in
+            your hands.
+          </p>
+        </div>
+
+        <div
+          class="relative mt-16 flex w-full max-w-[280px] shrink-0 items-center justify-center sm:max-w-[320px] lg:mt-0 lg:max-w-[380px]"
+          aria-hidden="true"
+          translate="no"
+        >
+          <div
+            class="absolute aspect-square w-[min(100%,320px)] rounded-full bg-cp-sakura/10 y-ring lg:w-[min(100%,360px)]"
+          ></div>
+          <div
+            class="absolute aspect-square w-[min(90%,280px)] rounded-full border border-cp-lavender/25 bg-gradient-to-br from-cp-sakura/15 to-transparent blur-px lg:w-[min(90%,320px)]"
+          ></div>
+          <span
+            translate="no"
+            class="notranslate relative select-none text-[clamp(7rem,22vw,14rem)] font-black leading-none y-glow"
+            style="
+              background: linear-gradient(
+                165deg,
+                #ffc0cb 0%,
+                #e8c4dc 50%,
+                #e6e6fa 100%
+              );
+              -webkit-background-clip: text;
+              background-clip: text;
+              color: transparent;
+            "
+            >Y</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="bg-cp-bg">
+      <section
+        id="philosophy"
+        class="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+      >
+        <div class="mx-auto max-w-2xl text-center lg:max-w-3xl">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.2em] text-cp-sakura"
+          >
+            Philosophy
+          </p>
+          <h2
+            class="mt-4 text-3xl font-extrabold tracking-tight text-cp-ink sm:text-4xl"
+          >
+            Our Philosophy
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-cp-muted sm:text-lg">
+            Principles that shape every product we ship.
+          </p>
+        </div>
+
+        <div
+          class="mt-16 grid grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-3 lg:gap-12"
+        >
+          <article
+            class="glass-card flex flex-col gap-6 rounded-2xl px-10 py-12 sm:gap-7 sm:px-11 sm:py-14 lg:px-12 lg:py-14"
+          >
+            <div
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white/50"
+              aria-hidden="true"
+            >
+              <svg
+                class="h-8 w-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="phi-grad-shield"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#FFC0CB" />
+                    <stop offset="100%" stop-color="#E6E6FA" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M12 3L19 5.5V11.5C19 16.5 15.5 20 12 21C8.5 20 5 16.5 5 11.5V5.5L12 3z"
+                  stroke="url(#phi-grad-shield)"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.5 12.5 11.2 14.2 14.8 9.6"
+                  stroke="url(#phi-grad-shield)"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold tracking-tight text-cp-ink">
+                Digital Sanctity
+              </h3>
+              <p class="mt-4 text-base leading-relaxed text-cp-muted">
+                Your data is a private garden. We build fences, not windows.
+                Local-first encryption ensures only you hold the key.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="glass-card flex flex-col gap-6 rounded-2xl px-10 py-12 sm:gap-7 sm:px-11 sm:py-14 lg:px-12 lg:py-14"
+          >
+            <div
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white/50"
+              aria-hidden="true"
+            >
+              <svg
+                class="h-8 w-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="phi-grad-sparkle"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#FFC0CB" />
+                    <stop offset="100%" stop-color="#E6E6FA" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M12 3v3M12 18v3M5.2 12H2.5M21.5 12H19M6.8 6.8 4.6 4.6M19.4 19.4l-2.2-2.2M6.8 17.2l-2.2 2.2M19.4 4.6l-2.2 2.2"
+                  stroke="url(#phi-grad-sparkle)"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M12 9.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Z"
+                  stroke="url(#phi-grad-sparkle)"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold tracking-tight text-cp-ink">
+                Thoughtful Design
+              </h3>
+              <p class="mt-4 text-base leading-relaxed text-cp-muted">
+                Inspired by the clarity of childhood, we strip away the noise. No
+                ads, no trackers—just tools that work for you.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="glass-card flex flex-col gap-6 rounded-2xl px-10 py-12 sm:gap-7 sm:px-11 sm:py-14 lg:px-12 lg:py-14"
+          >
+            <div
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white/50"
+              aria-hidden="true"
+            >
+              <svg
+                class="h-8 w-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="phi-grad-anchor"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#FFC0CB" />
+                    <stop offset="100%" stop-color="#E6E6FA" />
+                  </linearGradient>
+                </defs>
+                <circle
+                  cx="12"
+                  cy="7"
+                  r="2.75"
+                  stroke="url(#phi-grad-anchor)"
+                  stroke-width="1.5"
+                  fill="none"
+                />
+                <path
+                  d="M12 9.75V19.5M7 15.25h10M8.5 19.5l-2 2.75M15.5 19.5l2 2.75"
+                  stroke="url(#phi-grad-anchor)"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold tracking-tight text-cp-ink">
+                Built for Longevity
+              </h3>
+              <p class="mt-4 text-base leading-relaxed text-cp-muted">
+                <span translate="no" class="notranslate">YukiMind</span>
+                isn’t just a studio; it’s a commitment. We build for the long
+                haul, ensuring your digital tools grow with you.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="products"
+        class="mx-auto max-w-6xl border-t border-cp-ink/10 px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+      >
+        <div class="mx-auto max-w-2xl text-center lg:max-w-3xl">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.2em] text-cp-sakura"
+          >
+            Showcase
+          </p>
+          <h2
+            class="mt-4 text-3xl font-extrabold tracking-tight text-cp-ink sm:text-4xl"
+          >
+            Product Showcase
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-cp-muted sm:text-lg">
+            Tools we craft with care—built for privacy, designed to last. Our
+            lineup also explores
+            <span translate="no" class="notranslate">SubSnap</span> and
+            <span translate="no" class="notranslate">AiShotMind</span>.
+          </p>
+        </div>
+
+        <div
+          class="mx-auto mt-16 grid max-w-5xl grid-cols-1 items-stretch gap-6 md:mt-20 md:grid-cols-2 md:gap-8 lg:gap-10"
+        >
+          <article
+            class="group flex h-full min-h-0 flex-col rounded-2xl border border-cp-ink/[0.09] bg-gradient-to-b from-white/90 to-[#fdfcf8] p-6 shadow-[0_2px_16px_rgba(26,26,26,0.05)] transition-all duration-300 hover:border-cp-sakura/30 hover:shadow-[0_10px_36px_rgba(26,26,26,0.11)] sm:p-7"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="h-11 w-11 shrink-0 rounded-full bg-gradient-to-br from-cp-sakura via-[#e8c4dc] to-cp-lavender shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] ring-1 ring-white/70"
+                aria-hidden="true"
+              ></div>
+              <h3 class="text-lg font-bold tracking-tight text-cp-ink sm:text-xl">
+                <span translate="no" class="notranslate">SecureVault</span>
+              </h3>
+            </div>
+            <p
+              class="mt-4 line-clamp-2 text-sm leading-relaxed text-cp-muted sm:text-[0.9375rem]"
+            >
+              A local-first vault for sensitive files—encrypted on your device,
+              with optional intruder awareness when access is attempted.
+            </p>
+            <div
+              class="mt-4 flex flex-wrap gap-1.5"
+              role="note"
+              aria-label="SecureVault security highlights"
+            >
+              <span
+                translate="no"
+                class="notranslate rounded-md border border-cp-sakura/30 bg-cp-sakura/12 px-2 py-0.5 text-[0.625rem] font-semibold uppercase leading-tight tracking-wide text-cp-ink/90 sm:text-[0.65rem]"
+                >AES-256-GCM Encryption</span
+              >
+              <span
+                translate="no"
+                class="notranslate rounded-md border border-cp-sakura/30 bg-cp-sakura/12 px-2 py-0.5 text-[0.625rem] font-semibold uppercase leading-tight tracking-wide text-cp-ink/90 sm:text-[0.65rem]"
+                >100% Offline</span
+              >
+              <span
+                translate="no"
+                class="notranslate rounded-md border border-cp-sakura/30 bg-cp-sakura/12 px-2 py-0.5 text-[0.625rem] font-semibold uppercase leading-tight tracking-wide text-cp-ink/90 sm:text-[0.65rem]"
+                >Biometric Lock</span
+              >
+            </div>
+            <div class="mt-auto flex w-full flex-col items-start gap-2.5 pt-6">
+              <span
+                class="inline-flex cursor-default select-none items-center justify-center rounded-full border border-[#FFC0CB]/85 bg-transparent px-8 py-2.5 text-sm font-semibold tracking-wide text-[#FFC0CB] shadow-none transition-all duration-200 hover:border-[#FFC0CB] hover:bg-cp-sakura/10 hover:text-cp-ink/85 hover:shadow-[0_2px_12px_rgba(255,192,203,0.25)]"
+                role="status"
+                aria-label="SecureVault — coming soon"
+                >Coming Soon</span
+              >
+              <p
+                class="max-w-[16rem] text-[0.65rem] font-medium leading-relaxed tracking-wide text-cp-muted/80 sm:max-w-none sm:text-xs"
+              >
+                Currently in private beta. Official release coming soon.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="group flex h-full min-h-0 flex-col rounded-2xl border border-cp-ink/[0.09] bg-gradient-to-b from-white/90 to-[#fdfcf8] p-6 shadow-[0_2px_16px_rgba(26,26,26,0.05)] transition-all duration-300 hover:border-cp-sakura/30 hover:shadow-[0_10px_36px_rgba(26,26,26,0.11)] sm:p-7"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="h-11 w-11 shrink-0 rounded-full bg-gradient-to-br from-cp-lavender via-[#e8c4dc] to-cp-sakura shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] ring-1 ring-white/70"
+                aria-hidden="true"
+              ></div>
+              <h3 class="text-lg font-bold tracking-tight text-cp-ink sm:text-xl">
+                <span translate="no" class="notranslate">ShotMind</span>
+              </h3>
+            </div>
+            <p
+              class="mt-4 line-clamp-2 text-sm leading-relaxed text-cp-muted sm:text-[0.9375rem]"
+            >
+              Capture and organize what matters—on-device AI on your phone, so
+              your moments never need to leave your hands.
+            </p>
+            <div
+              class="mt-4 flex flex-wrap gap-1.5"
+              role="note"
+              aria-label="ShotMind security highlights"
+            >
+              <span
+                translate="no"
+                class="notranslate rounded-md border border-cp-sakura/30 bg-cp-sakura/12 px-2 py-0.5 text-[0.625rem] font-semibold uppercase leading-tight tracking-wide text-cp-ink/90 sm:text-[0.65rem]"
+                >On-Device AI</span
+              >
+              <span
+                translate="no"
+                class="notranslate rounded-md border border-cp-sakura/30 bg-cp-sakura/12 px-2 py-0.5 text-[0.625rem] font-semibold uppercase leading-tight tracking-wide text-cp-ink/90 sm:text-[0.65rem]"
+                >No Cloud Upload</span
+              >
+              <span
+                translate="no"
+                class="notranslate rounded-md border border-cp-sakura/30 bg-cp-sakura/12 px-2 py-0.5 text-[0.625rem] font-semibold uppercase leading-tight tracking-wide text-cp-ink/90 sm:text-[0.65rem]"
+                >Privacy-First</span
+              >
+            </div>
+            <div class="mt-auto flex w-full flex-col items-start gap-2.5 pt-6">
+              <span
+                class="inline-flex cursor-default select-none items-center justify-center rounded-full border border-[#FFC0CB]/85 bg-transparent px-8 py-2.5 text-sm font-semibold tracking-wide text-[#FFC0CB] shadow-none transition-all duration-200 hover:border-[#FFC0CB] hover:bg-cp-sakura/10 hover:text-cp-ink/85 hover:shadow-[0_2px_12px_rgba(255,192,203,0.25)]"
+                role="status"
+                aria-label="ShotMind — coming soon"
+                >Coming Soon</span
+              >
+              <p
+                class="max-w-[16rem] text-[0.65rem] font-medium leading-relaxed tracking-wide text-cp-muted/80 sm:max-w-none sm:text-xs"
+              >
+                Currently in private beta. Official release coming soon.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="yuki-gallery"
+        class="relative mx-auto max-w-6xl border-t border-cp-ink/10 px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+        aria-labelledby="yuki-gallery-heading"
+      >
+        <div class="mx-auto max-w-3xl text-center">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.2em] text-cp-sakura"
+          >
+            The Yuki Gallery
+          </p>
+          <h2
+            id="yuki-gallery-heading"
+            class="relative mt-4 inline-block pb-4 text-3xl font-extrabold tracking-tight text-cp-ink sm:text-4xl lg:text-[2.5rem]"
+          >
+            <span
+              class="relative z-10 notranslate"
+              translate="no"
+              >Yuki’s Studio: Where Art is Saved</span
+            >
+            <span
+              class="absolute bottom-1 left-0 right-0 mx-auto h-[3px] max-w-[12rem] rounded-full bg-gradient-to-r from-cp-sakura via-[#e8c4dc] to-cp-lavender opacity-90"
+              aria-hidden="true"
+            ></span>
+          </h2>
+          <p
+            class="mt-8 text-base leading-relaxed text-cp-muted sm:text-lg lg:mt-10"
+          >
+            This gallery is the inspiration behind
+            <span translate="no" class="notranslate">YukiMind</span>. We believe
+            digital memories should be cherished and protected, not just stored.
+          </p>
+        </div>
+
+        <div
+          class="mt-16 columns-1 gap-x-10 gap-y-0 sm:columns-2 lg:mt-20 lg:columns-3 lg:gap-x-12"
+        >
+          <figure
+            class="gallery-piece museum-frame mb-10 break-inside-avoid sm:mb-12"
+          >
+            <div class="museum-frame-inner overflow-hidden">
+              <div
+                class="flex aspect-[4/5] items-center justify-center bg-gradient-to-br from-[#fff9f5] via-[#faf5ff] to-[#f5f9ff] p-6"
+                role="img"
+                aria-label="Placeholder artwork: pencil sketch"
+              >
+                <svg
+                  class="h-full w-full max-h-[220px] text-cp-muted/35"
+                  viewBox="0 0 120 150"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <linearGradient
+                      id="gal-sketch"
+                      x1="20"
+                      y1="20"
+                      x2="100"
+                      y2="130"
+                    >
+                      <stop stop-color="#FFC0CB" stop-opacity="0.55" />
+                      <stop offset="1" stop-color="#E6E6FA" stop-opacity="0.5" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M18 118c22-8 38-28 48-52 12-30 14-58 8-64-4-4-12 2-22 22-18 34-20 78-14 94"
+                    stroke="url(#gal-sketch)"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M42 40c8 4 18 22 24 48M68 32c-6 18-8 42-4 68M28 72c14-6 32-8 48-4"
+                    stroke="url(#gal-sketch)"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    opacity="0.7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <figcaption
+              class="mt-4 text-center text-xs font-medium uppercase tracking-[0.12em] text-cp-muted"
+            >
+              <span translate="no" class="notranslate">Yuki</span>’s Art Piece #1
+            </figcaption>
+          </figure>
+
+          <figure
+            class="gallery-piece museum-frame mb-10 break-inside-avoid sm:mb-12"
+          >
+            <div class="museum-frame-inner overflow-hidden">
+              <div
+                class="flex aspect-[3/4] items-center justify-center bg-[#fdfcfa] p-8"
+                role="img"
+                aria-label="Placeholder artwork: paint splash"
+              >
+                <svg
+                  class="h-full w-full max-h-[200px]"
+                  viewBox="0 0 140 120"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <linearGradient id="gal-splash-a" x1="0" y1="0" x2="1" y2="1">
+                      <stop stop-color="#FFC0CB" stop-opacity="0.85" />
+                      <stop offset="1" stop-color="#E6E6FA" stop-opacity="0.75" />
+                    </linearGradient>
+                    <linearGradient id="gal-splash-b" x1="1" y1="0" x2="0" y2="1">
+                      <stop stop-color="#E6E6FA" stop-opacity="0.65" />
+                      <stop offset="1" stop-color="#FFC0CB" stop-opacity="0.5" />
+                    </linearGradient>
+                  </defs>
+                  <ellipse
+                    cx="52"
+                    cy="58"
+                    rx="38"
+                    ry="28"
+                    fill="url(#gal-splash-a)"
+                    transform="rotate(-12 52 58)"
+                  />
+                  <ellipse
+                    cx="88"
+                    cy="48"
+                    rx="28"
+                    ry="36"
+                    fill="url(#gal-splash-b)"
+                    transform="rotate(18 88 48)"
+                  />
+                  <ellipse
+                    cx="72"
+                    cy="78"
+                    rx="22"
+                    ry="18"
+                    fill="#E6E6FA"
+                    fill-opacity="0.35"
+                  />
+                </svg>
+              </div>
+            </div>
+            <figcaption
+              class="mt-4 text-center text-xs font-medium uppercase tracking-[0.12em] text-cp-muted"
+            >
+              Art Piece #2
+            </figcaption>
+          </figure>
+
+          <figure
+            class="gallery-piece museum-frame mb-10 break-inside-avoid sm:mb-12"
+          >
+            <div class="museum-frame-inner overflow-hidden">
+              <div
+                class="flex aspect-square items-center justify-center bg-gradient-to-b from-white to-[#f7f3ed] p-10"
+                role="img"
+                aria-label="Placeholder artwork: geometric study"
+              >
+                <svg
+                  class="h-full w-full max-h-[180px]"
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <linearGradient id="gal-geo" x1="0" y1="0" x2="100" y2="100">
+                      <stop stop-color="#FFC0CB" />
+                      <stop offset="1" stop-color="#E6E6FA" />
+                    </linearGradient>
+                  </defs>
+                  <rect
+                    x="18"
+                    y="22"
+                    width="44"
+                    height="44"
+                    rx="2"
+                    stroke="url(#gal-geo)"
+                    stroke-width="1.5"
+                    fill="none"
+                    opacity="0.85"
+                    transform="rotate(-8 40 44)"
+                  />
+                  <circle
+                    cx="68"
+                    cy="38"
+                    r="16"
+                    stroke="url(#gal-geo)"
+                    stroke-width="1.25"
+                    fill="none"
+                    opacity="0.65"
+                  />
+                  <path
+                    d="M28 72 L52 52 L78 78 Z"
+                    stroke="url(#gal-geo)"
+                    stroke-width="1.25"
+                    fill="none"
+                    stroke-linejoin="round"
+                    opacity="0.55"
+                  />
+                </svg>
+              </div>
+            </div>
+            <figcaption
+              class="mt-4 text-center text-xs font-medium uppercase tracking-[0.12em] text-cp-muted"
+            >
+              Art Piece #3
+            </figcaption>
+          </figure>
+
+          <figure
+            class="gallery-piece museum-frame mb-10 break-inside-avoid sm:mb-12"
+          >
+            <div class="museum-frame-inner overflow-hidden">
+              <div
+                class="flex aspect-[5/4] items-center justify-center p-8"
+                role="img"
+                aria-label="Placeholder artwork: soft wash"
+              >
+                <svg
+                  class="h-full w-full max-h-[160px]"
+                  viewBox="0 0 160 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <linearGradient id="gal-wash" x1="0" y1="50" x2="160" y2="50">
+                      <stop stop-color="#FFC0CB" stop-opacity="0.35" />
+                      <stop offset="0.45" stop-color="#E8C4DC" stop-opacity="0.45" />
+                      <stop offset="1" stop-color="#E6E6FA" stop-opacity="0.4" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="160" height="100" fill="url(#gal-wash)" rx="4" />
+                  <ellipse
+                    cx="90"
+                    cy="45"
+                    rx="55"
+                    ry="28"
+                    fill="#FFFFFF"
+                    fill-opacity="0.25"
+                  />
+                  <path
+                    d="M20 70 Q80 40 140 72"
+                    stroke="#E6E6FA"
+                    stroke-opacity="0.5"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+            <figcaption
+              class="mt-4 text-center text-xs font-medium uppercase tracking-[0.12em] text-cp-muted"
+            >
+              Art Piece #4
+            </figcaption>
+          </figure>
+        </div>
+
+        <div
+          class="mx-auto mt-20 max-w-3xl lg:mt-28"
+        >
+          <div
+            class="rounded-2xl bg-gradient-to-br from-cp-sakura/35 via-[#e8c4dc]/25 to-cp-lavender/35 p-[1px] shadow-sm"
+          >
+            <div
+              class="rounded-2xl bg-[#fdfcf8]/95 px-10 py-12 text-center sm:px-12 sm:py-14 lg:px-16 lg:py-16"
+              style="
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9),
+                  0 1px 0 rgba(255, 255, 255, 0.5);
+              "
+            >
+              <blockquote
+                cite="#yuki-gallery"
+                class="border-0 opacity-60"
+              >
+                <p
+                  class="text-lg font-normal italic leading-relaxed text-cp-ink sm:text-xl sm:leading-relaxed lg:text-[1.35rem] lg:leading-relaxed"
+                >
+                  Captured by a daughter’s imagination. Preserved by a father’s
+                  engineering. This is the heart of why we build.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="mx-auto max-w-6xl border-t border-cp-ink/10 px-5 py-12 sm:px-6 lg:px-8"
+      >
+        <h2
+          class="text-sm font-semibold uppercase tracking-widest text-cp-sakura"
+        >
+          Contact
+        </h2>
+        <p class="mt-4 max-w-xl text-base leading-relaxed text-cp-muted">
+          For partnerships, press, and product inquiries, reach us by email.
+        </p>
+      </section>
+    </main>
+
+    <footer class="border-t border-cp-ink/10 bg-cp-footer text-cp-ink">
+      <div class="mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8 lg:py-16">
+        <div
+          class="grid grid-cols-1 items-start gap-12 text-center sm:gap-14 lg:grid-cols-12 lg:gap-12 lg:text-left"
+        >
+          <div
+            class="flex flex-col items-center lg:col-span-4 lg:items-start lg:text-left"
+          >
+            <a
+              href="#"
+              class="inline-block text-lg font-semibold tracking-tight text-cp-ink transition hover:text-cp-sakura"
+              ><span translate="no" class="notranslate">YukiMind Studio</span></a
+            >
+            <p
+              class="mt-4 max-w-xs text-sm leading-relaxed text-cp-muted sm:mx-auto lg:mx-0"
+            >
+              Crafting secure, local-first experiences for the digital age.
+            </p>
+          </div>
+
+          <nav
+            class="flex justify-center lg:col-span-4 lg:justify-center"
+            aria-label="Footer links"
+          >
+            <div
+              class="grid grid-cols-2 gap-x-8 gap-y-3 text-left text-sm font-medium text-cp-muted"
+            >
+              <a
+                href="#products"
+                class="whitespace-nowrap transition hover:text-cp-sakura focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cp-sakura"
+                >Products</a
+              >
+              <a
+                href="#yuki-gallery"
+                class="whitespace-nowrap transition hover:text-cp-sakura focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cp-sakura"
+                >Gallery</a
+              >
+              <a
+                href="#philosophy"
+                class="whitespace-nowrap transition hover:text-cp-sakura focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cp-sakura"
+                >Philosophy</a
+              >
+              <a
+                href="privacy.html"
+                class="whitespace-nowrap transition hover:text-cp-sakura focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cp-sakura"
+                >Privacy Policy</a
+              >
+            </div>
+          </nav>
+
+          <div
+            class="flex flex-col items-center lg:col-span-4 lg:items-end lg:text-right"
+          >
+            <p
+              class="text-xs font-semibold uppercase tracking-widest text-cp-muted"
+            >
+              Contact
+            </p>
+            <a
+              href="mailto:support@yukimind.com"
+              class="mt-3 inline-block text-sm font-medium text-cp-ink transition hover:text-cp-sakura"
+              >support@yukimind.com</a
+            >
+            <div
+              class="mt-10 flex w-full items-center justify-center gap-6 lg:mt-12 lg:justify-end"
+              aria-label="Social links"
+            >
+              <a
+                href="https://www.reddit.com"
+                class="text-cp-muted transition hover:text-cp-sakura"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YukiMind on Reddit"
+              >
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.731-1.486l.891-4.402a.192.192 0 0 1 .209-.156l3.062.646a1.25 1.25 0 0 1 1.129-.746zM8.878 12.122a1.125 1.125 0 0 0 0 2.25c.62 0 1.125-.505 1.125-1.125a1.125 1.125 0 0 0-1.125-1.125zm6.244 0a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25zm-6.244 4.243c-.62 0-1.125.505-1.125 1.125 0 .3.12.57.314.768 1.344 1.405 3.572 1.405 4.916 0 .194-.198.314-.468.314-.768a1.125 1.125 0 0 0-1.125-1.125H8.878z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://x.com"
+                class="text-cp-muted transition hover:text-cp-sakura"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YukiMind on X"
+              >
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com"
+                class="text-cp-muted transition hover:text-cp-sakura"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YukiMind on GitHub"
+              >
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-black/5 bg-black/[0.02] px-5 py-8 text-center"
+      >
+        <p
+          translate="no"
+          lang="en"
+          class="footer-legal-line text-xs leading-[1.75] text-cp-muted"
+        >
+          © 2026
+          <span translate="no" class="notranslate">YukiMind Studio</span>.
+          Registered Enterprise Developer.
+        </p>
+        <p
+          translate="no"
+          lang="en"
+          class="footer-legal-line mx-auto mt-3 max-w-2xl text-[11px] leading-[1.75] text-cp-muted sm:text-xs"
+        >
+          Yantai Economic and Technological Development Zone, Yantai, Shandong
+          Province, People’s Republic of China — registered enterprise for
+          <span translate="no" class="notranslate">YukiMind Studio</span>
+          (Enterprise Developer;
+          D-U-N-S registered).
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
