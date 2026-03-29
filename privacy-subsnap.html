@@ -4,20 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy — SubSnap | YukiMind</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              cp: {
-                bg: "#FCFAF2",
-                footer: "#E2DBD0",
-                ink: "#1A1A1A",
-                muted: "#4A4A4A",
-                sakura: "#FFC0CB",
-              },
+              cp: { bg: "#FCFAF2", footer: "#E2DBD0", ink: "#1A1A1A", muted: "#4A4A4A", sakura: "#FFC0CB", lavender: "#E6E6FA" },
             },
+            fontFamily: { sans: ["Inter", "PingFang SC", "system-ui", "sans-serif"] },
           },
         },
       };
@@ -41,11 +39,10 @@
 
     <main class="mx-auto max-w-3xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <article class="prose prose-neutral max-w-none">
-        
         <section class="mb-12">
           <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">1. Local Financial Records</h2>
           <p class="mt-4 text-base leading-relaxed text-cp-muted">
-            SubSnap is a utility tool designed to help you track your subscriptions. We believe your spending habits are your business, not ours. **All subscription data, costs, and renewal dates are stored exclusively on your device.**
+            SubSnap is a utility tool designed to help you track your subscriptions. All subscription data, costs, and renewal dates are stored exclusively on your device.
           </p>
         </section>
 
@@ -53,22 +50,21 @@
           <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">2. Permissions & Usage</h2>
           <ul class="mt-4 list-disc space-y-3 pl-5 text-base leading-relaxed text-cp-muted">
             <li><strong class="font-semibold text-cp-ink">Notifications:</strong> Used only to remind you of upcoming subscription renewals.</li>
-            <li><strong class="font-semibold text-cp-ink">Storage:</strong> Used if you choose to export your subscription records as a CSV file.</li>
+            <li><strong class="font-semibold text-cp-ink">Storage:</strong> Used to export subscription records as a CSV file if initiated by the user.</li>
           </ul>
         </section>
 
         <section class="mb-12">
           <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">3. No Third-Party Selling</h2>
           <p class="mt-4 text-base leading-relaxed text-cp-muted">
-            SubSnap does not include third-party advertising or analytics SDKs. We do not track which services you subscribe to or how much you spend.
+            We do not sell your personal information or use third-party advertising SDKs.
           </p>
         </section>
 
         <section class="mb-4">
           <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">4. Contact Information</h2>
           <p class="mt-4 text-base leading-relaxed text-cp-muted">
-            For any privacy-related inquiries, please contact:
-            <a href="mailto:support@yukimind.com" class="font-medium text-cp-ink underline decoration-cp-sakura/50">support@yukimind.com</a>
+            Contact us at <a href="mailto:support@yukimind.com" class="font-medium text-cp-ink underline decoration-cp-sakura/50">support@yukimind.com</a>
           </p>
         </section>
       </article>
