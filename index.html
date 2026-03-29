@@ -123,6 +123,18 @@
       .footer-legal-line {
         line-height: 1.65;
       }
+      .gallery-img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+        aspect-ratio: auto;
+        display: block;
+      }
+      .gallery-piece--landscape .gallery-img-landscape-wrap {
+        width: 100%;
+        min-width: 0;
+      }
     </style>
   </head>
   <body
@@ -591,47 +603,19 @@
           class="mt-16 columns-1 gap-x-10 gap-y-0 sm:columns-2 lg:mt-20 lg:columns-3 lg:gap-x-12"
         >
           <figure
-            class="gallery-piece museum-frame mb-10 break-inside-avoid sm:mb-12"
+            class="gallery-piece museum-frame mb-10 w-full min-w-0 break-inside-avoid sm:mb-12"
           >
-            <div class="museum-frame-inner overflow-hidden">
+            <div class="museum-frame-inner overflow-visible">
               <div
-                class="flex aspect-[4/5] items-center justify-center bg-gradient-to-br from-[#fff9f5] via-[#faf5ff] to-[#f5f9ff] p-6"
-                role="img"
-                aria-label="Placeholder artwork: pencil sketch"
+                class="flex w-full min-w-0 items-center justify-center bg-gradient-to-br from-[#fff9f5] via-[#faf5ff] to-[#f5f9ff] p-4 sm:p-6"
               >
-                <svg
-                  class="h-full w-full max-h-[220px] text-cp-muted/35"
-                  viewBox="0 0 120 150"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <linearGradient
-                      id="gal-sketch"
-                      x1="20"
-                      y1="20"
-                      x2="100"
-                      y2="130"
-                    >
-                      <stop stop-color="#FFC0CB" stop-opacity="0.55" />
-                      <stop offset="1" stop-color="#E6E6FA" stop-opacity="0.5" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M18 118c22-8 38-28 48-52 12-30 14-58 8-64-4-4-12 2-22 22-18 34-20 78-14 94"
-                    stroke="url(#gal-sketch)"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M42 40c8 4 18 22 24 48M68 32c-6 18-8 42-4 68M28 72c14-6 32-8 48-4"
-                    stroke="url(#gal-sketch)"
-                    stroke-width="1.2"
-                    stroke-linecap="round"
-                    opacity="0.7"
-                  />
-                </svg>
+                <img
+                  src="images/gallery_1.webp"
+                  alt="Artwork: pencil sketch by Yuki"
+                  class="gallery-img"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
             <figcaption
@@ -642,55 +626,19 @@
           </figure>
 
           <figure
-            class="gallery-piece museum-frame mb-10 break-inside-avoid sm:mb-12"
+            class="gallery-piece museum-frame mb-10 w-full min-w-0 break-inside-avoid sm:mb-12"
           >
-            <div class="museum-frame-inner overflow-hidden">
+            <div class="museum-frame-inner overflow-visible">
               <div
-                class="flex aspect-[3/4] items-center justify-center bg-[#fdfcfa] p-8"
-                role="img"
-                aria-label="Placeholder artwork: paint splash"
+                class="flex w-full min-w-0 items-center justify-center bg-[#fdfcfa] p-4 sm:p-8"
               >
-                <svg
-                  class="h-full w-full max-h-[200px]"
-                  viewBox="0 0 140 120"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <linearGradient id="gal-splash-a" x1="0" y1="0" x2="1" y2="1">
-                      <stop stop-color="#FFC0CB" stop-opacity="0.85" />
-                      <stop offset="1" stop-color="#E6E6FA" stop-opacity="0.75" />
-                    </linearGradient>
-                    <linearGradient id="gal-splash-b" x1="1" y1="0" x2="0" y2="1">
-                      <stop stop-color="#E6E6FA" stop-opacity="0.65" />
-                      <stop offset="1" stop-color="#FFC0CB" stop-opacity="0.5" />
-                    </linearGradient>
-                  </defs>
-                  <ellipse
-                    cx="52"
-                    cy="58"
-                    rx="38"
-                    ry="28"
-                    fill="url(#gal-splash-a)"
-                    transform="rotate(-12 52 58)"
-                  />
-                  <ellipse
-                    cx="88"
-                    cy="48"
-                    rx="28"
-                    ry="36"
-                    fill="url(#gal-splash-b)"
-                    transform="rotate(18 88 48)"
-                  />
-                  <ellipse
-                    cx="72"
-                    cy="78"
-                    rx="22"
-                    ry="18"
-                    fill="#E6E6FA"
-                    fill-opacity="0.35"
-                  />
-                </svg>
+                <img
+                  src="images/gallery_2.webp"
+                  alt="Artwork: paint splash by Yuki"
+                  class="gallery-img"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
             <figcaption
@@ -701,56 +649,19 @@
           </figure>
 
           <figure
-            class="gallery-piece museum-frame mb-10 break-inside-avoid sm:mb-12"
+            class="gallery-piece museum-frame mb-10 w-full min-w-0 break-inside-avoid sm:mb-12"
           >
-            <div class="museum-frame-inner overflow-hidden">
+            <div class="museum-frame-inner overflow-visible">
               <div
-                class="flex aspect-square items-center justify-center bg-gradient-to-b from-white to-[#f7f3ed] p-10"
-                role="img"
-                aria-label="Placeholder artwork: geometric study"
+                class="flex w-full min-w-0 items-center justify-center bg-gradient-to-b from-white to-[#f7f3ed] p-4 sm:p-10"
               >
-                <svg
-                  class="h-full w-full max-h-[180px]"
-                  viewBox="0 0 100 100"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <linearGradient id="gal-geo" x1="0" y1="0" x2="100" y2="100">
-                      <stop stop-color="#FFC0CB" />
-                      <stop offset="1" stop-color="#E6E6FA" />
-                    </linearGradient>
-                  </defs>
-                  <rect
-                    x="18"
-                    y="22"
-                    width="44"
-                    height="44"
-                    rx="2"
-                    stroke="url(#gal-geo)"
-                    stroke-width="1.5"
-                    fill="none"
-                    opacity="0.85"
-                    transform="rotate(-8 40 44)"
-                  />
-                  <circle
-                    cx="68"
-                    cy="38"
-                    r="16"
-                    stroke="url(#gal-geo)"
-                    stroke-width="1.25"
-                    fill="none"
-                    opacity="0.65"
-                  />
-                  <path
-                    d="M28 72 L52 52 L78 78 Z"
-                    stroke="url(#gal-geo)"
-                    stroke-width="1.25"
-                    fill="none"
-                    stroke-linejoin="round"
-                    opacity="0.55"
-                  />
-                </svg>
+                <img
+                  src="images/gallery_3.webp"
+                  alt="Artwork: geometric study by Yuki"
+                  class="gallery-img"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
             <figcaption
@@ -761,45 +672,19 @@
           </figure>
 
           <figure
-            class="gallery-piece museum-frame mb-10 break-inside-avoid sm:mb-12"
+            class="gallery-piece museum-frame gallery-piece--landscape mb-10 w-full min-w-0 break-inside-avoid sm:mb-12"
           >
-            <div class="museum-frame-inner overflow-hidden">
+            <div class="museum-frame-inner w-full min-w-0 overflow-visible">
               <div
-                class="flex aspect-[5/4] items-center justify-center p-8"
-                role="img"
-                aria-label="Placeholder artwork: soft wash"
+                class="gallery-img-landscape-wrap flex w-full min-w-0 items-center justify-center p-4 sm:p-8"
               >
-                <svg
-                  class="h-full w-full max-h-[160px]"
-                  viewBox="0 0 160 100"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <linearGradient id="gal-wash" x1="0" y1="50" x2="160" y2="50">
-                      <stop stop-color="#FFC0CB" stop-opacity="0.35" />
-                      <stop offset="0.45" stop-color="#E8C4DC" stop-opacity="0.45" />
-                      <stop offset="1" stop-color="#E6E6FA" stop-opacity="0.4" />
-                    </linearGradient>
-                  </defs>
-                  <rect width="160" height="100" fill="url(#gal-wash)" rx="4" />
-                  <ellipse
-                    cx="90"
-                    cy="45"
-                    rx="55"
-                    ry="28"
-                    fill="#FFFFFF"
-                    fill-opacity="0.25"
-                  />
-                  <path
-                    d="M20 70 Q80 40 140 72"
-                    stroke="#E6E6FA"
-                    stroke-opacity="0.5"
-                    stroke-width="2"
-                    fill="none"
-                    stroke-linecap="round"
-                  />
-                </svg>
+                <img
+                  src="images/gallery_4.webp"
+                  alt="Artwork: soft wash landscape by Yuki"
+                  class="gallery-img"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
             <figcaption
