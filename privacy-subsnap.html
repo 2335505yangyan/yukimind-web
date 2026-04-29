@@ -37,38 +37,93 @@
       </div>
     </header>
 
-    <main class="mx-auto max-w-3xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <article class="prose prose-neutral max-w-none">
-        <section class="mb-12">
-          <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">1. Local Financial Records</h2>
-          <p class="mt-4 text-base leading-relaxed text-cp-muted">
-            SubSnap is a utility tool designed to help you track your subscriptions. All subscription data, costs, and renewal dates are stored exclusively on your device.
-          </p>
-        </section>
+   <main class="mx-auto max-w-3xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+  <article class="prose prose-neutral max-w-none">
+    <section class="mb-12">
+      <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">1. Data We Collect</h2>
+      <p class="mt-4 text-base leading-relaxed text-cp-muted">
+        SubSnap is a subscription tracking utility that stores all data exclusively on your device. We collect the following information:
+      </p>
+      <ul class="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-cp-muted">
+        <li><strong class="font-semibold text-cp-ink">Subscription Details:</strong> Service name, billing amount, currency, billing cycle (weekly/monthly/quarterly/yearly), next payment date, reminder settings, notes, and price change information if applicable.</li>
+        <li><strong class="font-semibold text-cp-ink">Local Storage Only:</strong> All data is stored in the device's local SQLite database and is never transmitted to any server or third-party service.</li>
+        <li><strong class="font-semibold text-cp-ink">No Personal Identity Information:</strong> We do not collect your name, email address, phone number, location, or any other personally identifiable information.</li>
+        <li><strong class="font-semibold text-cp-ink">No Device Identifiers:</strong> We do not collect device IDs, advertising identifiers, or any tracking data.</li>
+      </ul>
+    </section>
 
-        <section class="mb-12">
-          <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">2. Permissions & Usage</h2>
-          <ul class="mt-4 list-disc space-y-3 pl-5 text-base leading-relaxed text-cp-muted">
-            <li><strong class="font-semibold text-cp-ink">Notifications:</strong> Used only to remind you of upcoming subscription renewals.</li>
-            <li><strong class="font-semibold text-cp-ink">Storage:</strong> Used to export subscription records as a CSV file if initiated by the user.</li>
-          </ul>
-        </section>
+    <section class="mb-12">
+      <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">2. How We Use Your Data</h2>
+      <p class="mt-4 text-base leading-relaxed text-cp-muted">
+        Your subscription data is used solely for:
+      </p>
+      <ul class="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-cp-muted">
+        <li>Displaying your subscription list and payment schedules</li>
+        <li>Calculating monthly and yearly spending totals</li>
+        <li>Sending local notification reminders before payment due dates</li>
+        <li>Sending alerts about upcoming price changes</li>
+      </ul>
+    </section>
 
-        <section class="mb-12">
-          <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">3. No Third-Party Selling</h2>
-          <p class="mt-4 text-base leading-relaxed text-cp-muted">
-            We do not sell your personal information or use third-party advertising SDKs.
-          </p>
-        </section>
+    <section class="mb-12">
+      <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">3. Permissions & Their Purpose</h2>
+      <p class="mt-4 text-base leading-relaxed text-cp-muted">
+        SubSnap requests the following Android permissions:
+      </p>
+      <ul class="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-cp-muted">
+        <li><strong class="font-semibold text-cp-ink">POST_NOTIFICATIONS:</strong> To display payment reminders and price change alerts.</li>
+        <li><strong class="font-semibold text-cp-ink">SCHEDULE_EXACT_ALARM:</strong> To precisely schedule notification reminders at the correct time.</li>
+        <li><strong class="font-semibold text-cp-ink">RECEIVE_BOOT_COMPLETED:</strong> To restore scheduled notifications after device restart.</li>
+        <li><strong class="font-semibold text-cp-ink">INTERNET:</strong> Used only for opening external links (this privacy policy, contact email, and Google Play rating page). No data is transmitted over the network.</li>
+      </ul>
+    </section>
 
-        <section class="mb-4">
-          <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">4. Contact Information</h2>
-          <p class="mt-4 text-base leading-relaxed text-cp-muted">
-            Contact us at <a href="mailto:support@yukimind.com" class="font-medium text-cp-ink underline decoration-cp-sakura/50">support@yukimind.com</a>
-          </p>
-        </section>
-      </article>
-    </main>
+    <section class="mb-12">
+      <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">4. Data Sharing</h2>
+      <p class="mt-4 text-base leading-relaxed text-cp-muted">
+        <strong class="font-semibold text-cp-ink">We do not share your data with any third party.</strong> We do not use third-party analytics, advertising SDKs, or data collection services. Your subscription information never leaves your device.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">5. Data Security</h2>
+      <p class="mt-4 text-base leading-relaxed text-cp-muted">
+        Your data is stored locally on your device in a SQLite database and is protected by Android's application sandbox. No data is transmitted over the internet, eliminating network-based security risks.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">6. Data Retention & Deletion</h2>
+      <p class="mt-4 text-base leading-relaxed text-cp-muted">
+        Your subscription data remains on your device until you uninstall SubSnap. Upon uninstallation, all locally stored data is automatically deleted. You can also manually delete individual subscriptions within the app.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">7. Children's Privacy</h2>
+      <p class="mt-4 text-base leading-relaxed text-cp-muted">
+        SubSnap is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">8. Changes to This Policy</h2>
+      <p class="mt-4 text-base leading-relaxed text-cp-muted">
+        We may update this privacy policy from time to time. Significant changes will be highlighted in the app and updated on this page with a new "Last updated" date. We encourage you to review this policy periodically.
+      </p>
+    </section>
+
+    <section class="mb-4">
+      <h2 class="text-xl font-bold tracking-tight text-cp-ink sm:text-2xl">9. Contact Information</h2>
+      <p class="mt-4 text-base leading-relaxed text-cp-muted">
+        If you have questions about this privacy policy or how we handle your data, please contact us at:
+      </p>
+      <p class="mt-2 text-base leading-relaxed text-cp-muted">
+        <a href="mailto:support@yukimind.com" class="font-medium text-cp-ink underline decoration-cp-sakura/50">support@yukimind.com</a>
+      </p>
+    </section>
+  </article>
+</main>
 
     </body>
 </html>
